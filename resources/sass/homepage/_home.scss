@@ -1,0 +1,759 @@
+.banner {
+  min-height: 655px;
+  display: block;
+  margin-top: 110px;
+
+  .banner-container {
+    position: relative;
+    height: 655px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'UTM BryantLG';
+
+    .banner-title {
+      position: absolute;
+      top: 204px;
+      left: 60px;
+    }
+
+    .banner-title-content {
+      font-size: 50px;
+      font-weight: 400;
+      color: #11114E;
+      margin: 0;
+      line-height: 55px;
+    }
+
+    .banner-title-content-b {
+      font-weight: 900;
+    }
+
+    .banner-content {
+      position: absolute;
+      left: 60px;
+      top: 327px;
+      font-size: 20px;
+      color: #505353;
+      font-weight: 400;
+    }
+
+    .button-1 {
+      display: block;
+      max-width: 350px;
+      border: 0;
+      background-color:#B2D235;
+      color: #FFFFFF;
+      padding: 10px 40px;
+      position: absolute;
+      left: 60px;
+      top: 403px;
+      border-radius: 45px;
+      font-size: 30px;
+      font-weight: 700;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .banner-bottom {
+    background-image: linear-gradient(#FFFFFF, #E5E5E5 98%);
+    width: 100%;
+    height: 160px;
+  }
+}
+
+.main-container {
+  margin: 0;
+  padding: 0;
+
+  .top-bg {
+    height: 160px;
+    background-image: linear-gradient(#FFFFFF, #E5E5E5 98%);
+  }
+}
+
+.content {
+  margin-bottom: 60px;
+}
+
+.main-content {
+  width: 100%;
+  margin-top: -100px;
+
+  .row {
+    justify-content: center;
+  }
+
+  .col-lg-4 {
+    max-width: 370px;
+
+    .card {
+      width: 100% !important;
+      min-height: 443px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 0;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-img {
+      background-color: #3F6185;
+      height: 215px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      height: 125px;
+      object-fit: contain;
+    }
+
+    .card-body {
+      text-align: center;
+    }
+
+    .card-title,
+    .card-text,
+    .card-btn {
+      font-family: 'UTM BryantLG';
+    }
+
+    .card-title {
+      font-size: 30px;
+      color: #B2D235;
+      font-weight: 700;
+      text-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(80, 83, 83, 1);
+      min-height: 84px;
+    }
+
+    .card-btn {
+      background-color: #B2D235;
+      border: 0;
+      border-radius: 22px;
+      box-shadow: inset 0px 1.5px 2px #6F8710;
+      padding-top: 5px;
+      padding-bottom: 7px;
+      margin-bottom: 26px;
+      font-weight: 700;
+    }
+
+    .card-btn:active {
+      background-color: #B2D235;
+      border-color: transparent;
+    }
+  }
+}
+
+.other-content {
+  margin-top: 110px;
+
+  .other-content-header {
+    width: fit-content;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'UTM BryantLG';
+    color: #11114E;
+    font-weight: 900;
+    line-height: 98px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    margin-bottom: 45px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 6px;
+      background-color: #B2D235;
+      border-radius: 3px;
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  .view-all-content {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    a {
+      display: block;
+      font-size: 30px;
+      color: #90AB26;
+      font-weight: 900;
+      font-family: 'UTM BryantLG';
+      text-decoration: none;
+
+      svg {
+        height: 26px;
+        fill: #90AB26;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+.why-hapolearn-container {
+  height: 633px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'UTM BryantLG';
+
+  .why-hapolearn-title,
+  .why-hapolearn-text {
+    color: white;
+  }
+
+  .why-hapolearn-title {
+    font-size: 70px;
+    font-weight: 900;
+  }
+
+  .why-hapolearn-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .why-hapolearn-img {
+    width: 676px;
+    object-fit: contain;
+  }
+
+  .why-hapolearn-img2 {
+    display: none;
+  }
+}
+
+.feedback {
+  margin-top: 40px;
+  font-family: 'UTM BryantLG';
+
+  .feedback-heading {
+    width: fit-content;
+    text-align: center;
+    font-size: 60px;
+    color: #11114E;
+    font-weight: 900;
+    line-height: 98px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    margin-bottom: 45px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 6px;
+      background-color: #B2D235;
+      border-radius: 3px;
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  .feedback-title {
+    text-align: center;
+    color: #505353;
+    font-size: 20px;
+    width: 705px;
+    margin: 0 auto;
+  }
+
+  .feedback-list {
+    width: 1100px;
+    margin: 20px auto;
+
+    .feedback-item {
+      margin-left: 10px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 26px;
+      color: #848687;
+      margin-top: -20px;
+    }
+  }
+
+  .feedback-comment {
+    position: relative;
+    width: 500px;
+    min-height: 140px;
+    padding: 20px 20px 20px 30px;
+    border: 1px solid #E2E2E2;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px 0 rgb(0 0 0 / 10%), 0px -1px 4px 0 rgb(0 0 0 / 10%);
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 71%;
+      background-color: #D9DADC;
+      position: absolute;
+      left: 14px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 132px;
+      left: 17px;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      box-shadow: 2px 2px 3px rgb(0 0 0 / 10%);
+      transform: rotate(45deg);
+    }
+  }
+
+  .feedback-user {
+    display: flex;
+    margin-top: 20px;
+
+    .feedback-user-img {
+        width: 50px;
+        height: 50px;
+      object-fit: contain;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+
+    p {
+      margin: 0;
+      line-height: 20px;
+    }
+
+    .feedback-user-name {
+      font-size: 20px;
+      color: #11114E;
+      font-weight: 900;
+    }
+
+    .feedback-user-subject {
+      font-size: 16px;
+      color: #505353;
+    }
+  }
+
+  .feedback-user-rating {
+    .checked {
+      color: #F2C54F;
+    }
+  }
+}
+
+.banner-b {
+  font-family: 'UTM BryantLG';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 100px 0;
+  margin-top: 100px;
+
+  .banner-b-title {
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+    width: 705px;
+    text-align: center;
+    line-height: initial;
+  }
+
+  .banner-b-btn {
+    display: block;
+    max-width: 350px;
+    border: 0;
+    background-color: white;
+    color: #90AB26;
+    padding: 10px 32px;
+    border-radius: 45px;
+    font-size: 30px;
+    font-weight: 900;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.statistic {
+  font-family: 'UTM BryantLG';
+  margin-top: 40px;
+
+  .statistic-heading {
+    width: fit-content;
+    text-align: center;
+    font-size: 60px;
+    color: #11114E;
+    font-weight: 900;
+    line-height: 98px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    margin-bottom: 45px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 6px;
+      background-color: #B2D235;
+      border-radius: 3px;
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  .statistic-main {
+    display: flex;
+  }
+
+  .statistic-content {
+    width: 33.3333%;
+    text-align: center;
+
+    .statistic-content-title {
+      font-size: 40px;
+      font-weight: 600;
+      color: #505353;
+    }
+
+    .statistic-content-num {
+      color: #B2D235;
+      font-size: 40px;
+
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .banner {
+    .banner-container {
+      width: 100vw;
+      height: 350px;
+      background-size: cover;
+
+      .banner-title {
+        top: 30%;
+        left: 27px;
+      }
+
+      .banner-title-content {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      .banner-title-content svg {
+        width: 39px;
+        height: 37px;
+      }
+
+      .banner-content {
+        top: 52%;
+        left: 27px;
+      }
+
+      .button-1 {
+        top: 70%;
+        left: 27px;
+        width: 200px;
+        height: 40px;
+        font-size: 16px;
+        padding: 8px 29px;
+      }
+    }
+
+    .overlay {
+      width: 100vw;
+      height: 100vh;
+      z-index: 3;
+      background-color: rgb(255, 255, 255, 0.01);
+      position: fixed;
+      top: 108px;
+      left: 0;
+      right: 0;
+      display: none;
+    }
+
+    .overlay.overlay-open {
+      display: initial;
+    }
+  }
+
+  .content {
+    margin-top: -230px;
+  }
+
+  .main-content {
+    .col-lg-4 {
+      max-width: 840px;
+      max-height: 158px;
+      margin-bottom: 20px;
+
+      .card {
+        flex-direction: row;
+        height: 100%;
+        min-height: 158px;
+      }
+
+      .card-img {
+        min-width: 240px;
+        max-height: 158px;
+      }
+
+      .card-body {
+        text-align: left;
+        max-width: 574px;
+        padding: 10px 20px 0;
+      }
+
+      .card-title {
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .card-text {
+        min-height: auto;
+      }
+
+      .card-btn {
+        float: right;
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .other-content {
+    margin-top: 50px;
+
+    .view-all-content {
+      margin-top: 10px;
+    }
+  }
+
+  .why-hapolearn-container {
+    height: 384px;
+    padding-top: 90px;
+
+    .why-hapolearn-content {
+      position: relative;
+    }
+
+    .why-hapolearn-title {
+      font-size: 50px;
+      position: absolute;
+      white-space: nowrap;
+      top: -110px;
+      left: 204px;
+    }
+
+    .why-hapolearn-text {
+      font-size: 16px;
+    }
+
+    .why-hapolearn-img {
+      width: 326px;
+    }
+
+    .why-hapolearn-img2 {
+      display: none;
+    }
+  }
+
+  .banner-b {
+
+    .banner-b-title {
+      font-size: 35px;
+    }
+
+    .banner-b-btn {
+      font-size: 20px;
+    }
+  }
+
+  .statistic {
+    .statistic-heading {
+      font-size: 60px;
+    }
+
+    .statistic-content {
+      .statistic-content-title,
+      .statistic-content-num {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+@media (min-width: 990px) and (max-width: 1440px) {
+  .banner {
+    .banner-container {
+      background-size: contain;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    .banner-container {
+      background-size: contain;
+    }
+  }
+}
+
+@media (max-width: 657px) {
+  .main-content {
+    .col-lg-4 {
+      .card-img {
+        min-width: 170px;
+      }
+
+      .card-body {
+        padding: 5px 10px 0;
+      }
+
+      .card-btn {
+        padding-top: 3px;
+        padding-bottom: 5px;
+        margin-top: -20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    .banner-container {
+      .banner-title {
+        top: 51%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .banner-title-content {
+        font-size: 25px;
+        width: max-content;
+      }
+
+      .banner-content {
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .banner-content p {
+        width: max-content;
+      }
+
+      .button-1 {
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+        height: 46px;
+        font-size: 18px;
+        padding: 8px 45px;
+      }
+    }
+  }
+
+  .main-content {
+    .col-lg-4 {
+      max-width: 360px;
+      max-height: none;
+
+      .card {
+        flex-direction: column;
+      }
+
+      .card-img {
+        max-height: 190px;
+      }
+
+      .card-body {
+        text-align: center;
+        padding: 20px 12px 0;
+      }
+
+      .card-btn {
+        float: none;
+        margin-top: 0;
+        padding: 5px 30px 8px;
+      }
+    }
+  }
+
+  .other-content {
+    .other-content-header {
+      font-size: 50px;
+    }
+
+    .view-all-content {
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .why-hapolearn-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    .why-hapolearn-content {
+      padding-top: 96px;
+    }
+
+    .why-hapolearn-title {
+      font-size: 40px;
+      white-space: normal;
+      top: -60px;
+      left: 142px;
+    }
+
+    .why-hapolearn-text {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .why-hapolearn-img2 {
+      display: block;
+      position: absolute;
+      top: -210px;
+      left: -28px;
+    }
+  }
+
+  .banner-b {
+    padding: 40px 0;
+
+    .banner-b-title {
+      font-size: 20px;
+      width: auto;
+    }
+
+    .banner-b-btn {
+      font-size: 18px;
+    }
+  }
+
+  .statistic {
+    .statistic-heading {
+      font-size: 50px;
+    }
+
+    .statistic-main {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
