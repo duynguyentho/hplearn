@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ModifyProgram extends Migration
+class Xxx1 extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,7 @@ class ModifyProgram extends Migration
     public function up()
     {
         Schema::table('program_user', function (Blueprint $table) {
-//            $table->unsignedBigInteger('lesson_id')->nullable();
-//
-//            $table->foreign('lesson_id')->on('lessons')->references('id');
-
+            $table->foreign('course_id')->on('courses')->references('id');
         });
     }
 

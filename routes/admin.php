@@ -35,5 +35,9 @@ Route::namespace('Admin')->group(function () {
         Route::get('students', [\App\Http\Controllers\Admin\StudentController::class, 'index'])->name('students.index');
         Route::get('students/create', [\App\Http\Controllers\Admin\StudentController::class, 'create'])->name('students.create');
         Route::post('students/store', [\App\Http\Controllers\Admin\StudentController::class, 'store'])->name('students.store');
+        Route::get('lessons/{id}/programs', [\App\Http\Controllers\Admin\ProgramController::class, 'index'])->name('lessons.programs');
+        Route::get('lessons/{id}/programs/create', [\App\Http\Controllers\Admin\ProgramController::class, 'create'])->name('lessons.programs.create');
+        Route::post('lessons/{id}/programs', [\App\Http\Controllers\Admin\ProgramController::class, 'store'])->name('lessons.programs.save');
+        Route::get('students/{id}/process', [\App\Http\Controllers\Admin\StudentController::class, 'sendMailProcess'])->name('students.process');
     });
 });

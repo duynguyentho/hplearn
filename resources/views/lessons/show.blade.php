@@ -65,7 +65,11 @@
                                     @csrf
                                     <div class="course-detail-lesson lesson-file-type">
                                         <div>
+                                            @if($program->type == 'video')
+                                            <i class="fa-solid fa-video-camera"></i>
+                                            @else
                                             <i class="fa-solid fa-file-pdf"></i>
+                                            @endif
                                             <span>{{ $program->type }}</span>
                                             <p class="course-detail-lesson-title">{{ $program->name }}
                                             <div
@@ -165,7 +169,8 @@
             $.post("{{ route('programs.store') }}",
 
                 {
-                    program_id: e.target.id
+                    program_id: e.target.id,
+                    course_id: "{{ request()->course_id }}"
                 }
                 ,
 

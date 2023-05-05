@@ -36,20 +36,20 @@ class AddForeignKeyTable extends Migration
 //            $table->foreign('user_id')->on('users')->references('id');
 //        });
 
-        Schema::table('program_user', function (Blueprint $table) {
-            $table->foreign('program_id')->on('programs')->references('id');
-            $table->foreign('user_id')->on('users')->references('id');
-        });
-
-        Schema::table('reviews', function (Blueprint $table) {
-            $table->foreign('course_id')->on('courses')->references('id');
-            $table->foreign('user_id')->on('users')->references('id');
-        });
-
-        Schema::table('course_tag', function (Blueprint $table) {
-            $table->foreign('course_id')->on('courses')->references('id');
-            $table->foreign('tag_id')->on('tags')->references('id');
-        });
+//        Schema::table('program_user', function (Blueprint $table) {
+//            $table->foreign('program_id')->on('programs')->references('id');
+//            $table->foreign('user_id')->on('users')->references('id');
+//        });
+//
+//        Schema::table('reviews', function (Blueprint $table) {
+//            $table->foreign('course_id')->on('courses')->references('id');
+//            $table->foreign('user_id')->on('users')->references('id');
+//        });
+//
+//        Schema::table('course_tag', function (Blueprint $table) {
+//            $table->foreign('course_id')->on('courses')->references('id');
+//            $table->foreign('tag_id')->on('tags')->references('id');
+//        });
     }
 
     /**

@@ -13,10 +13,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-
-                <h4 class="card-title">Danh sách bài học</h4>
+                <h4 class="card-title">Danh sách học viên</h4>
                 <div class="row mb-5"></div>
-
                 <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                     <thead>
                     <tr>
@@ -26,6 +24,7 @@
                         <th>Email</th>
                         <th>Số điện thoại</th>
                         <th>Ngày tạo</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,6 +38,9 @@
                         <td>{{ $student->email }}</td>
                         <td>{{ $student->phone }}</td>
                         <td>{{ $student->created_at->format('Y/m/d') }}</td>
+                        <td>
+                            <a href="{{ route('students.process', $student->id) }}" class="btn btn-warning">Send Mail</a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>

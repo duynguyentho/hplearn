@@ -34,4 +34,5 @@ class ProgramUser extends Model
         'user_id',
         'lesson_id'
     ];
+
 }

@@ -97,8 +97,31 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function sendMailProcess($id)
     {
-        //
+
+        $student = User::query()->with(['courses', 'programs'])->find($id);
+
+        $results = DB::table('courses')
+            ->selectRaw(DB::raw('COUNT(programs.id) as programs_count, courses.id as course_id'))
+            ->join('lessons', 'courses.id', '=', 'lessons.course_id')
+            ->join('programs', 'lessons.id', '=', 'programs.lesson_id')
+            ->groupBy('courses.id')
+            ->get();
+
+        foreach ($student->courses as $course) {
+            foreach ($results as $rs) {
+                if ($rs->course_id == $course->id) {
+                    $course->program_count = $rs->programs_count;
+
+                    $learned = ProgramUser::query()
+                        ->whereUserId($id)
+                        ->whereHas('le')
+                        ->count();
+                }
+            }
+        }
+
+        return redirect()->route('students.index');
     }
 }

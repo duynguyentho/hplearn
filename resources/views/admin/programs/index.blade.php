@@ -21,31 +21,21 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Tên khoá học</th>
-                        <th>Tên bài học</th>
-                        <th>Mô tả</th>
-                        <th>Thời lượng</th>
-                        <th>Số tài liệu</th>
+                        <th>Tên</th>
+                        <th>Loại tài liệu</th>
                         <th>Ngày tạo</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($lessons as $lesson)
+                    @foreach ($lesson->programs as $program)
                     <tr>
-                        <td>{{ $lesson->id }}</td>
-                        <td>{{ $lesson->course->name }}</td>
-                        <td>{{ $lesson->name }}</td>
+                        <td>{{ $program->id }}</td>
                         <td>
-                            {{ $lesson->description }}
+                            <a href="{{ $program->source_code }}">{{ $program->name }}</a>
                         </td>
-                        <td>{{ $lesson->time }} phút</td>
-                        <td>{{ $lesson->programs()->count() }}</td>
-                        <td>{{ $lesson->created_at->format('Y/m/d') }}</td>
+                        <td>{{ $program->type }}</td>
                         <td>
-                            <a href="{{ route('lessons.programs', $lesson->id) }}" class="btn-primary btn">Thông tin tài liệu</a>
-                            <a href="{{ route('lessons.programs.create', $lesson->id) }}" class="btn-primary btn">Đăng kí tài liệu</a>
-
+                            {{ $program->created_at->format('Y/m/d') }}
                         </td>
                     </tr>
                     @endforeach
