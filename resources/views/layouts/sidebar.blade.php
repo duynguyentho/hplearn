@@ -41,6 +41,11 @@
                             <a href="{{ route('lessons.create') }}"
                                key="t-horizontal">Thêm bài học</a>
                         </li>
+
+                        <li>
+                            <a href="{{ route('lessons.importView') }}"
+                               key="t-horizontal">Import</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -56,7 +61,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('lessons.create') }}"
+                            <a href="{{ route('students.create') }}"
                                key="t-horizontal">Thêm học viên</a>
                         </li>
                     </ul>

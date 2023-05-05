@@ -19,7 +19,9 @@ class ProgramController extends Controller
         if (!ProgramUser::where(['user_id' => auth()->id(), 'program_id' => $request['program_id']])->count()) {
 
             $program = Program::find($request['program_id']);
-            $program->users()->attach(auth()->user()->id);
+            $program->users()->attach(auth()->user()->id, [
+                'lesson_id' => $program->lesson_id
+            ]);
         }
 
         return response()->json([

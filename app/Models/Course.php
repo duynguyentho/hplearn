@@ -6,6 +6,59 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * App\Models\Course
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property string|null $image
+ * @property string|null $description
+ * @property int|null $price
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read mixed $avg_star
+ * @property-read mixed $course_price
+ * @property-read mixed $course_status
+ * @property-read mixed $five_stars
+ * @property-read mixed $four_stars
+ * @property-read mixed $one_stars
+ * @property-read mixed $review_rating
+ * @property-read mixed $three_stars
+ * @property-read mixed $total_learners
+ * @property-read mixed $total_lessons
+ * @property-read mixed $total_times
+ * @property-read mixed $two_stars
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Lesson> $lessons
+ * @property-read int|null $lessons_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Review> $reviews
+ * @property-read int|null $reviews_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Tag> $tags
+ * @property-read int|null $tags_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $teachers
+ * @property-read int|null $teachers_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $users
+ * @property-read int|null $users_count
+ * @method static \Database\Factories\CourseFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course mainCourses()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course otherCourses()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course search($data)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course withoutTrashed()
+ * @mixin \Eloquent
+ */
 class Course extends Model
 {
     use HasFactory, SoftDeletes;

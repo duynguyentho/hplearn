@@ -29,6 +29,11 @@ Route::namespace('Admin')->group(function () {
         Route::post('/courses-save', [\App\Http\Controllers\Admin\AdminController::class, 'courseStore'])->name('admin.course-save');
         Route::get('/lessons/index', [\App\Http\Controllers\Admin\LessonController::class, 'index'])->name('lessons.index');
         Route::get('/lessons/create', [\App\Http\Controllers\Admin\LessonController::class, 'create'])->name('lessons.create');
+        Route::post('lessons/store', [\App\Http\Controllers\Admin\LessonController::class, 'store'])->name('lessons.store');
+        Route::post('lessons/import', [\App\Http\Controllers\Admin\LessonController::class, 'import'])->name('lessons.import');
+        Route::get('lessons/import', [\App\Http\Controllers\Admin\LessonController::class, 'importView'])->name('lessons.importView');
         Route::get('students', [\App\Http\Controllers\Admin\StudentController::class, 'index'])->name('students.index');
+        Route::get('students/create', [\App\Http\Controllers\Admin\StudentController::class, 'create'])->name('students.create');
+        Route::post('students/store', [\App\Http\Controllers\Admin\StudentController::class, 'store'])->name('students.store');
     });
 });

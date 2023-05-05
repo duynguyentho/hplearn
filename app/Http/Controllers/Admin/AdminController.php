@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\CourseImport;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +39,8 @@ class AdminController extends Controller
 
     public function courseStore(Request $request)
     {
-        Storage::disk('public')->put('', $request->file);
+        \Excel::import(new CourseImport(), $request->file('file'));
+        return redirect()->route('admin.course-view');
     }
 
     /**

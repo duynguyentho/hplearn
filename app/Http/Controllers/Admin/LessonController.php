@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\LessonImport;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Models\Lesson;
 
@@ -15,7 +17,6 @@ class LessonController extends Controller
      */
     public function index()
     {
-        
         $lessons = Lesson::query()->with(['course', 'programs'])->get();
         return view('admin.lessons.index', compact('lessons'));
     }
@@ -27,7 +28,8 @@ class LessonController extends Controller
      */
     public function create()
     {
-        return view('admin.lessons.create');
+        $courses = Course::query()->get();
+        return view('admin.lessons.create', compact('courses'));
     }
 
     /**
@@ -75,14 +77,14 @@ class LessonController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function import(Request $request)
     {
-        //
+        \Excel::import(new LessonImport(), $request->file('file'));
+        return redirect()->route('lessons.index');
+    }
+
+    public function importView(Request $request)
+    {
+        return view('admin.lessons.import');
     }
 }

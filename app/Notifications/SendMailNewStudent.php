@@ -9,16 +9,19 @@ use Illuminate\Notifications\Notification;
 
 class SendMailNewStudent extends Notification
 {
-    use Queueable;
+    // use Queueable;
+    protected $student;
+    protected $password;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($student, $password)
     {
-        //
+        $this->student = $student;
+        $this->password = $password;
     }
 
     /**
@@ -41,9 +44,10 @@ class SendMailNewStudent extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Chào mừng bạn đã đến với HapoLearn')
+                    ->line("Tài khoản đăng nhập: {$this->student->username}")
+                    ->line("Mật khẩu: {$this->password}")
+                    ->line('Vui lòng đăng nhập và thực hiện đổi mật khẩu');
     }
 
     /**

@@ -19,11 +19,11 @@
                     <div class="course-detail-img mb-5">
                         <img src="{{ $lesson->image }}" alt="">
                     </div>
-                    <h3>Tiến độ: {{ $programUsers != 0 && $lesson->totalPrograms != 0 ? ($programUsers /
+                    <h3>Tiến độ: {{ $learned != 0 && $lesson->totalPrograms != 0 ? ($learned /
                         $lesson->totalPrograms) * 100 : 0 }}%</h3>
                     <div class="lesson-progress mb-4">
                         <div class="user-progress"
-                             style="width: {{ $programUsers != 0 && $lesson->totalPrograms != 0 ? ($programUsers / $lesson->totalPrograms) * 100 : 0 }}%"></div>
+                             style="width: {{ $learned != 0 && $lesson->totalPrograms != 0 ? ($learned / $lesson->totalPrograms) * 100 : 0 }}%"></div>
                     </div>
                     <div class="bg-white p-3">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">

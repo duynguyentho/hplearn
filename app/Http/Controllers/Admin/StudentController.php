@@ -3,9 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreStudentRequest;
 use App\Models\ProgramUser;
 use App\Models\User;
+use App\Notifications\SendMailNewStudent;
 use Illuminate\Http\Request;
+use Mail;
+use Str;
+use Hash;
+use DB;
 
 class StudentController extends Controller
 {
@@ -16,8 +22,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        
-        $students = User::query()->where('role', config('roles.user'))->get();
+
+        $students = User::query()->where('role', config('roles.user'))->orderByDesc('id')->get();
         return view('admin.students.index', compact('students'));
     }
 
@@ -28,18 +34,27 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.students.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreStudentRequest $request)
     {
-        //
+        DB::beginTransaction();
+        try {
+            $password = Str::random(8);
+
+            $student = User::query()->create(array_merge($request->all(), [
+                'password' => Hash::make($password),
+            ]));
+
+            $student->notify(new SendMailNewStudent($student, $password));
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back();
+        }
+
+        return redirect()->route('students.index');
     }
 
     /**

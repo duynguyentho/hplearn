@@ -4,7 +4,7 @@
 
 @section('css')
 <!-- Plugins css -->
-<link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css"/>
 @endsection
 
 @section('content')
@@ -13,14 +13,13 @@
         <div class="card">
             <div class="card-body">
 
-                    @csrf
-                <h4 class="card-title">Dropzone</h4>
-                <p class="card-title-desc">DropzoneJS is an open source library
-                    that provides drag’n’drop file uploads with image previews.
-                </p>
+                @csrf
+                <h4 class="card-title">Import bài học</h4>
+                <p class="card-title-desc">Vui lòng tải file định dạng XLSX, CSV</p>
 
                 <div>
-                    <form action="{{ route('admin.course-save') }}" method="post" multiple="multiple" class="dropzone" id="formDile">
+                    <form action="{{ route('lessons.import') }}" method="post" multiple="multiple" class="dropzone"
+                          id="formDile">
                         @csrf
                         <div class="fallback">
                             <input name="file" type="file" multiple="multiple">
@@ -34,7 +33,7 @@
                         </div>
                     </form>
                     <div class="text-center mt-4">
-                        <a href="{{ route('admin.course-view') }}" class="btn btn-primary waves-effect waves-light">Upload
+                        <a href="{{ route('lessons.index') }}" class="btn btn-primary waves-effect waves-light">Upload
                         </a>
                     </div>
                 </div>
@@ -47,4 +46,11 @@
 <!-- Plugins js -->
 <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        $('#btnupload').click(function () {
+            window.onload.href="{{ route('lessons.index') }}"
+        })
+    })
+</script>
 @endsection

@@ -18,17 +18,15 @@
     <div class="col-xl-10">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Form Grid Layout</h4>
+                <h4 class="card-title mb-4">Tạo mới bài học</h4>
 
                 <form>
                     <div class="mb-3">
-                        <label class="form-label">Single Select</label>
+                        <label class="form-label">Khóa học</label>
                         <select class="form-control select2">
-                            <option>Select</option>
-                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                <option value="AK">Alaska</option>
-                                <option value="HI">Hawaii</option>
-                            </optgroup>
+                            @foreach ($courses as $course)
+                            <option value="{{  $course->id }}">{{ $course->name }}</option>
+                            @endforeach
                         </select>
 
                     </div>
