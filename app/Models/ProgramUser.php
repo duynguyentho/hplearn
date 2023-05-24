@@ -32,7 +32,13 @@ class ProgramUser extends Model
     protected $fillable = [
         'program_id',
         'user_id',
-        'lesson_id'
+        'lesson_id',
+        'course_id',
     ];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 
 }

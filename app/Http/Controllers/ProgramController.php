@@ -20,7 +20,8 @@ class ProgramController extends Controller
 
             $program = Program::find($request['program_id']);
             $program->users()->attach(auth()->user()->id, [
-                'lesson_id' => $program->lesson_id
+                'lesson_id' => $program->lesson_id,
+                'course_id' => $request->course_id
             ]);
         }
 

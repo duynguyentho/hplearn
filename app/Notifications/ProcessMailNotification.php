@@ -7,21 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class SendMailNewStudent extends Notification
+class ProcessMailNotification extends Notification
 {
-    // use Queueable;
+    use Queueable;
     protected $student;
-    protected $password;
-
+    protected $results;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($student, $password)
+    public function __construct($student, $results)
     {
         $this->student = $student;
-        $this->password = $password;
+        $this->results = $results;
     }
 
     /**
@@ -44,13 +43,10 @@ class SendMailNewStudent extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Chào mừng bạn đã đến với HapoLearn')
-                    ->line("Tài khoản đăng nhập: {$this->student->username}")
-                    ->line("Mật khẩu: {$this->password}")
-                    ->line('Vui lòng đăng nhập và thực hiện đổi mật khẩu')
-                    ->line('Để đăng nhập, vui lòng nhấn vào nút bên dưới')
-                    ->action('Đăng nhập', route('login'));
-
+                    ->view('mail.process', [
+                        'student' => $this->student,
+                        'results' => $this->results,
+                    ]);
     }
 
     /**

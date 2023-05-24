@@ -64,7 +64,7 @@
         </div>
     </div>
     <div class="other-content main-content">
-        <p class="other-content-header">Other course</p>
+        <p class="other-content-header">Các khóa học</p>
         <div class="row">
             @foreach($otherCourses as $course)
                 <div class="col-lg-4">
@@ -123,7 +123,7 @@
 </section>
 
 <section class="feedback container-fluid">
-    <p class="feedback-heading">Feedback</p>
+    <p class="feedback-heading">Đánh giá</p>
     <p class="feedback-title">
         What other students turned professionals have to say about us after learning with us and reaching their goals
     </p>

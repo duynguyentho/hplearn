@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreStudentRequest;
+use App\Models\Course;
 use App\Models\ProgramUser;
 use App\Models\User;
+use App\Notifications\ProcessMailNotification;
 use App\Notifications\SendMailNewStudent;
 use Illuminate\Http\Request;
 use Mail;
@@ -101,26 +103,35 @@ class StudentController extends Controller
     {
 
         $student = User::query()->with(['courses', 'programs'])->find($id);
+        $results = ProgramUser::query()
+        ->select([
+            'course_id',
+            DB::raw('COUNT(course_id) as total'),
+        ])
+            ->with('course')
+            ->whereUserId($id)
+            ->whereIn('course_id', $student->courses->pluck('id'))
+            ->groupBy('course_id')
+            ->get();
 
-        $results = DB::table('courses')
+            $results2 = DB::table('courses')
             ->selectRaw(DB::raw('COUNT(programs.id) as programs_count, courses.id as course_id'))
             ->join('lessons', 'courses.id', '=', 'lessons.course_id')
             ->join('programs', 'lessons.id', '=', 'programs.lesson_id')
             ->groupBy('courses.id')
             ->get();
 
-        foreach ($student->courses as $course) {
-            foreach ($results as $rs) {
-                if ($rs->course_id == $course->id) {
-                    $course->program_count = $rs->programs_count;
+            $results2->each(function ($item) use ($results) {
+                $results->each(function ($item2) use ($item) {
+                    if ($item->course_id == $item2->course_id) {
+                        $item->learned = $item2->total;
+                        $item->learned_percent = round($item2->total / $item->programs_count * 100, 2);
+                        $item->course_name = $item2->course->name;
+                    }
+                });
+            });
 
-                    $learned = ProgramUser::query()
-                        ->whereUserId($id)
-                        ->whereHas('le')
-                        ->count();
-                }
-            }
-        }
+            $student->notify(new ProcessMailNotification($student, $results2));
 
         return redirect()->route('students.index');
     }
