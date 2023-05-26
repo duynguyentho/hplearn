@@ -324,14 +324,14 @@
                             <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                               <div style="font-family:Quattrocento;font-size:18px;font-weight:bold;line-height:24px;text-align:left;color:#6B3902;">
                                 <p class="date" style="margin: 0; margin-bottom: 5px; font-size: 16px;"></p>
-                                <h2 style="margin: 0; font-size: 24px; font-weight: bold; line-height: 24px;">Khóa học {{ $item->course_name }}</h2>
+                                <h2 style="margin: 0; font-size: 24px; font-weight: bold; line-height: 24px;">Khóa học {{ data_get($item, 'course_name') }}</h2>
                               </div>
                             </td>
                           </tr>
                           <tr>
                             <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                               <div style="font-family:Quattrocento;font-size:18px;font-weight:400;line-height:24px;text-align:left;color:#6B3902;">
-                                <p style="margin: 0;">Tiến độ học tập: {{ $item->learned_percent }}%</p>
+                                <p style="margin: 0;">Tiến độ học tập: {{ data_get($item, 'learned_percent') }}%</p>
                               </div>
                             </td>
                           </tr>

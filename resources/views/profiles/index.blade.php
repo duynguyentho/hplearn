@@ -8,13 +8,14 @@
             @method('PUT')
                 <div class="row">
                     <div class="col-md-4 user-information">
+                        <label for="user-img-btn" style="position: absolute; top: 5px;"><i class="fa-solid fa-camera"></i></label>
                         @if(isset($userDetail->avatar))
                             <img id="userImg" class="user-img" src="{{ asset($userDetail->avatar) }}" alt="anh nguoi dung">
                         @else
                             <img id="userImg" class="user-img" src="{{ asset('images/user-default-img.jpeg') }}" alt="anh nguoi dung">
                         @endif
-                        <input class="user-img-btn @error('image_upload') is-invalid @enderror" type="file" id="user-img-btn" name="image_upload">
-                        <label for="user-img-btn"><i class="fa-solid fa-camera"></i></label>
+                        <input class="user-img-btn @error('image_upload') is-invalid @enderror" type="file" id="user-img-btn" name="image_upload" width="100px; height:100px">
+                        
                         @error('image_upload')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

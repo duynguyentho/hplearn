@@ -49,7 +49,7 @@
         <div class="row">
             @foreach($mainCourses as $course)
                 <div class="col-lg-4">
-                    <div class="card">
+                    <div class="card" style="height: 537px;">
                         <div class="card-img">
                             <img src="{{ $course['image'] }}" class="card-img-top" alt="{{ $course['name'] }}">
                         </div>
@@ -68,7 +68,7 @@
         <div class="row">
             @foreach($otherCourses as $course)
                 <div class="col-lg-4">
-                    <div class="card">
+                    <div class="card" style="height: 537px;">
                         <div class="card-img">
                             <img src="{{ $course['image'] }}" class="card-img-top" alt="{{ $course['name'] }}">
                         </div>

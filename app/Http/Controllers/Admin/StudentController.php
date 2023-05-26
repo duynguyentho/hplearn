@@ -121,6 +121,7 @@ class StudentController extends Controller
             ->groupBy('courses.id')
             ->get();
 
+
             $results2->each(function ($item) use ($results) {
                 $results->each(function ($item2) use ($item) {
                     if ($item->course_id == $item2->course_id) {
